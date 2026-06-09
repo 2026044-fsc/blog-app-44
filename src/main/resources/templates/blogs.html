@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/css.style">
-    <title>All Blogs</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>ブログ一覧</title>
 </head>
 <body>
-    <h1>Spring</h1>
+    <header>
+        <h1>ALL BLOGだニャン(=^・・^=)</h1>
+
+        <nav class="navi">
+            <a href="blogs" class="homeBack">ホーム</a>
+            <a href="blogs/new" class="blogPlus">＋ 新規投稿</a>
+        </nav>
+    </header>
+
+    <p th:if="${#lists.isEmpty(blogs)}">ブログがありません</p>
+
+    <div class="cardLayout">
+        <nav th:if="${not #lists.isEmpty(blogs)}">
+            <div class="blogCard" th:each="blog : ${blogs}">
+                <p th:text="${blog.name}">投稿者名</p>
+                <p th:text="${blog.title}">タイトル</p>
+                <p th:text="${blog.notes}">本文・ノート</p>
+                <p th:text="${blog.postDate}">投稿日時</p>
+            </div>
+        </nav>
+    </div>
+
 </body>
 </html>

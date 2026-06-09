@@ -1,0 +1,72 @@
+/* 共通ヘッダー・ナビ */
+header {
+    display: flex;   /* 中身（ロゴとリンク）を横並びにする */
+    justify-content: space-between;   /* 両端に要素を広げて寄せる */
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+h1 {
+    color: palevioletred;
+    font-weight: bold;   /* 通常の太字 */
+    font-size: 1.6rem;   /* 文字サイズ */
+    padding-left: 20px;
+    margin: 0;           /* ブラウザが自動で付ける余計な上下の隙間をリセット */
+}
+
+.navi {
+    display: flex;        /* 横並びにする */
+    padding-left: 10px;   /* リンク間の間 */
+    color: #34302d;
+    align-items: center;  /* リンク同士の上下も中央揃えに */
+}
+
+.homeBack {
+    color: #34302d !important;
+    text-decoration: none !important;
+    padding-left: 16px;
+}
+
+.blogPlus {
+    color: #34302d !important;
+    text-decoration: none !important;
+    padding-left: 16px;
+    padding-right: 20px;
+}
+
+
+/* ブログ一覧ページ */
+body {
+    background-color: beige;
+}
+
+.cardLayout nav {
+    display: flex;  
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.blogCard {
+    background-color: white;
+    padding: 24px;
+    width: 285px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ブログ新規投稿ページ */
+.formLayout {
+    /* text-align: center; */
+    padding: 50px;
+    margin: 0 auto;    /* 上下は0、左右を自動（auto）にして中央寄せ */
+    text-align: left;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 20px 0px;
+}

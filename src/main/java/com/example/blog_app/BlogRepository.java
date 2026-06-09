@@ -15,7 +15,7 @@ public class BlogRepository {
     public BlogRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
-    //メソッド
+    //ブログ一覧を作成する
     public List<Blog> findAll() {
         return jdbcClient.sql("SELECT id, name, title, postDate, notes FROM blogs")
           .query(Blog.class)
@@ -24,9 +24,9 @@ public class BlogRepository {
 
     //Blog一覧からBlogをクリックする（idを選ぶ）と詳細ページに飛ぶようにする
     public Optional<Blog> findById(Long id) {
-    return jdbcClient.sql("SELECT id, name, title, postDate, notes FROM blogs WHERE id = :id")
-      .param("id", id)   //右の id は引数の id
-      .query(Blog.class)
-      .optional();   //戻り値の型に optional<> つける
+        return jdbcClient.sql("SELECT id, name, title, postDate, notes FROM blogs WHERE id = :id")
+          .param("id", id)   //右の id は引数の id
+          .query(Blog.class)
+          .optional();   //戻り値の型に optional<> つける
   }
 }
