@@ -57,6 +57,18 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* カード全体のスタイル設定 */
+.blogCardView {
+    display: block;        /* blockにすることで、中身全体がクリック可能になります */
+    color: #333;           /* 文字色を通常のテキスト色にする */
+    text-decoration: none; /* リンク特有の下線を消す */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s; /* マウスを乗せた時のアニメーション */
+}
 
 /* ブログ新規投稿ページ */
 .formLayout {
@@ -70,3 +82,6 @@ body {
     padding: 10px 20px;
     margin: 20px 0px;
 }
+
+
+/* ブログ詳細ページ */

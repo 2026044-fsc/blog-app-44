@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>ブログ詳細</title>
 </head>
 <body>
-    <h1>ブログ詳細</h1>
+    <header>
+        <h1>BLOG</h1>
+
+        <nav class="navi">
+            <a href="blogs" class="homeBack">ホームへ</a>
+            <a href="blogs/new" class="blogPlus">＋ 新規投稿</a>
+        </nav>
+    </header>
+
+    <h2 th:text="${blog.title}">タイトル</h2>
+        
+    <p class="name" th:text="${blog.name}">名前</p>
+    <p class="notes" th:text="${blog.notes}">本文</p>
+    <p class="date" th:text="${blog.postDate}">投稿日時</p>
+    <a th:href="@{/blogs/{id}/edit(id=${blog.id})}">編集</a>
 </body>
 </html>

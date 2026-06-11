@@ -1,7 +1,6 @@
 package com.example.blog_app;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,20 +43,18 @@ public class BlogController {
     //新規投稿画面から投稿ボタンを押すと一覧に加わる
     @PostMapping("/blogs")
     public String blogPlus(@ModelAttribute BlogForm form, Model model) {
-        model.addAttribute("name", form.getName());
-        model.addAttribute("title", form.getTitle());
-        model.addAttribute("notes", form.getNotes());
+        blogService.save(form);
         return "redirect:/blogs";
     }
     
     //ブログ一覧から本をクリックすると詳細ページに飛ぶようにする
     @GetMapping("/blogs/{id}")
     public String detail(@PathVariable Long id, Model model) {
-        Optional<Blog> blogOpt = blogService.findById(id);
+        List<Blog> blogOpt = blogService.findById(id);
         if ( blogOpt.isEmpty()) {
             return "redirect:/blogs";
         }
-        model.addAttribute("blog", blogOpt.get());
+        model.addAttribute("blog", blogOpt);
         return "blogs/detail";
   }
     
