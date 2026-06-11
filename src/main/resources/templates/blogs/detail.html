@@ -11,16 +11,16 @@
         <h1>BLOG</h1>
 
         <nav class="navi">
-            <a href="blogs" class="homeBack">ホームへ</a>
-            <a href="blogs/new" class="blogPlus">＋ 新規投稿</a>
+            <a href="/blogs" class="homeBack">ホーム</a>
+            <a href="/blogs/new" class="blogPlus">＋ 新規投稿</a>
         </nav>
     </header>
 
-    <h2 th:text="${blog.title}">タイトル</h2>
-        
-    <p class="name" th:text="${blog.name}">名前</p>
-    <p class="notes" th:text="${blog.notes}">本文</p>
-    <p class="date" th:text="${blog.postDate}">投稿日時</p>
-    <a th:href="@{/blogs/{id}/edit(id=${blog.id})}">編集</a>
+    <h2 class="detailTitle"  th:text="${blog.title}">タイトル</h2>
+    <div class="detailName">
+        <p th:text="${blog.name}">名前</p>
+    </div>
+    <p class="detailNotes" th:text="${blog.notes}">本文</p>
+    <p class="detailDate" th:text="${blog.postDate}">投稿日時</p>
 </body>
 </html>

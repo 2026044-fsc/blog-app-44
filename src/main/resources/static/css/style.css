@@ -49,14 +49,6 @@ body {
     padding-left: 20px;
 }
 
-.blogCard {
-    background-color: white;
-    padding: 24px;
-    width: 285px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* カード全体のスタイル設定 */
 .blogCardView {
     display: block;        /* blockにすることで、中身全体がクリック可能になります */
@@ -65,14 +57,14 @@ body {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 24px;
+    width: 285px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.2s, box-shadow 0.2s; /* マウスを乗せた時のアニメーション */
 }
 
 /* ブログ新規投稿ページ */
 .formLayout {
-    /* text-align: center; */
     padding: 50px;
     margin: 0 auto;    /* 上下は0、左右を自動（auto）にして中央寄せ */
     text-align: left;
@@ -85,3 +77,18 @@ body {
 
 
 /* ブログ詳細ページ */
+.detailTitle {
+    padding: 50px;
+    margin: 0 auto;    /* 上下は0、左右を自動（auto）にして中央寄せ */
+    text-align: left;
+}
+.detailNotes {
+    padding: 50px;
+    margin: 0 auto;    /* 上下は0、左右を自動（auto）にして中央寄せ */
+    text-align: left;
+}
+.detailDate {
+    padding: 50px;
+    margin: 0 auto;    /* 上下は0、左右を自動（auto）にして中央寄せ */
+    text-align: left;
+}

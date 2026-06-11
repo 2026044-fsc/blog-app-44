@@ -1,6 +1,7 @@
 package com.example.blog_app;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class BlogService {
     }
 
     //ブログ一覧からブログをクリックすると詳細ページに飛ぶようにする
-    public List<Blog> findById(Long id) {
+    public Optional<Blog> findById(Long id) {
         return blogRepository.findById(id);
     }
 }

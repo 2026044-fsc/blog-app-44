@@ -11,8 +11,8 @@
         <h1>ALL BLOG</h1>
 
         <nav class="navi">
-            <a href="blogs" class="homeBack">ホーム</a>
-            <a href="blogs/new" class="blogPlus">＋ 新規投稿</a>
+            <a href="/blogs" class="homeBack">ホーム</a>
+            <a href="/blogs/new" class="blogPlus">＋ 新規投稿</a>
         </nav>
     </header>
 
@@ -20,14 +20,13 @@
 
     <div class="cardLayout">
         <nav th:if="${not #lists.isEmpty(blogs)}">
-            <a th:href="@{/blogs/{id}(id=${blog.id})}" class="blogCardView">
-                <div class="blogCard" th:each="blog : ${blogs}">
-                        <p th:text="${blog.name}">投稿者名</p>
-                        <p th:text="${blog.title}">タイトル</p>
-                        <!-- <p th:text="${blog.notes}">本文・ノート</p> -->
-                        <p th:text="${blog.postDate}">投稿日時</p>
-                </div>
-            </a>
+            <div th:each="blog : ${blogs}">
+                <a th:href="@{/blogs/{id} (id=${blog.id}) }" class="blogCardView">
+                    <p th:text="${blog.name}">投稿者名</p>
+                    <p th:text="${blog.title}">タイトル</p>
+                    <p th:text="${blog.postDate}">投稿日時</p>
+                </a>
+            </div>
         </nav>
     </div>
 

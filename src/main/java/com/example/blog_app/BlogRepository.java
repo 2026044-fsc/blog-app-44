@@ -1,6 +1,7 @@
 package com.example.blog_app;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
@@ -22,11 +23,11 @@ public class BlogRepository {
     }
 
     //Blog一覧からBlogをクリックする（idを選ぶ）と詳細ページに飛ぶようにする
-    public List<Blog> findById(Long id) {
+    public Optional<Blog> findById(Long id) {
         return jdbcClient.sql("SELECT id, name, title, postDate, notes FROM blogs WHERE id = :id")
           .param("id", id)   //右の id は引数の id
           .query(Blog.class)
-          .list();   
+          .optional();   
   }
 
     // 保存（フォームからの追加用）

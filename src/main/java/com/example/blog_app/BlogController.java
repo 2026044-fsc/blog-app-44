@@ -1,6 +1,7 @@
 package com.example.blog_app;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,11 +51,11 @@ public class BlogController {
     //ブログ一覧から本をクリックすると詳細ページに飛ぶようにする
     @GetMapping("/blogs/{id}")
     public String detail(@PathVariable Long id, Model model) {
-        List<Blog> blogOpt = blogService.findById(id);
+        Optional<Blog> blogOpt = blogService.findById(id);
         if ( blogOpt.isEmpty()) {
             return "redirect:/blogs";
         }
-        model.addAttribute("blog", blogOpt);
+        model.addAttribute("blog", blogOpt.get());
         return "blogs/detail";
   }
     
