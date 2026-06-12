@@ -80,15 +80,26 @@ body {
 .detailTitle {
     padding: 50px;
     margin: 0 auto;    /* 上下は0、左右を自動（auto）にして中央寄せ */
-    text-align: left;
+    text-align: center;
+    margin-top: 20px;
+    color: red;
 }
+
 .detailNotes {
     padding: 50px;
     margin: 0 auto;    /* 上下は0、左右を自動（auto）にして中央寄せ */
-    text-align: left;
+    text-align: center;
+    width: 600px;
 }
-.detailDate {
-    padding: 50px;
-    margin: 0 auto;    /* 上下は0、左右を自動（auto）にして中央寄せ */
-    text-align: left;
+
+.line {
+    text-align: center;
+}
+
+.memo {
+    display: flex;   /* 中身（ロゴとリンク）を横並びにする */
+    justify-content: center;
+    gap: 15px;       
+    width: 100%;
+
 }

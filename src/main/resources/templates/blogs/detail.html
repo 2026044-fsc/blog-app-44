@@ -17,10 +17,14 @@
     </header>
 
     <h2 class="detailTitle"  th:text="${blog.title}">タイトル</h2>
-    <div class="detailName">
-        <p th:text="${blog.name}">名前</p>
-    </div>
+
+    <p class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
     <p class="detailNotes" th:text="${blog.notes}">本文</p>
-    <p class="detailDate" th:text="${blog.postDate}">投稿日時</p>
+    <p class="line">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+
+    <div class="memo">
+        <p class="detailDate" th:text="${blog.postDate}">投稿日時</p>
+        <p class="postAuthor" th:text="${blog.name}">名前</p>
+    </div>
 </body>
 </html>
